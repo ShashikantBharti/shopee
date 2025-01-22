@@ -88,50 +88,42 @@ shopee/
 
 ## Technology Used
 
-### 1. Django (Backend Framework)
-
-### 2. Bootstrap 5 (Frontend Framework)
-
-### 3. SQLite (Database for development)
-
-### 4. django-crispy-forms (For rendering forms with Bootstrap)
-
-### 5. Third-Party Payment Gateway (e.g., Stripe, PayPal for payment integration)
+- 1. Django (Backend Framework)
+- 2. Bootstrap 5 (Frontend Framework)
+- 3. SQLite (Database for development)
+- 4. django-crispy-forms (For rendering forms with Bootstrap)
+- 5. Third-Party Payment Gateway (e.g., Stripe, PayPal for payment integration)
 
 ## Contributing
 
-### 1. Fork the repository.
-
-### 2. Create a new branch.
+- 1. Fork the repository.
+- 2. Create a new branch.
 
 ```bash
 git checkout -b feature-name
 ```
 
-### 3. Make your changes.
-
-### 4. Commit your changes.
+- 3. Make your changes.
+- 4. Commit your changes.
 
 ```bash
 git commit -m 'Add new feature'
 ```
 
-### 5. Push to the branch.
+- 5. Push to the branch.
 
 ```bash
 git push origin feature-name
 ```
 
-### 6. Open a pull request.
+- 6. Open a pull request.
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ```bash
-
 ---
-
 You can copy and paste the above code into a new `README.md` file in the root directory of your project. Let me know if you'd like any additional customizations! 😊
 
 ```
