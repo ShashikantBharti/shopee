@@ -9,10 +9,10 @@ class CustomLoginView(LoginView):
     def get_success_url(self):
         # Redirect users based on their role
         if self.request.user.is_vendor():
-            return '/vendor/dashboard/'
+            return '/accounts/vendor/dashboard/'
         elif self.request.user.is_buyer():
-            return '/buyer/dashboard/'
-        return '/user/dashboard/'
+            return '/accounts/buyer/dashboard/'
+        return '/accounts/user/dashboard/'
 
 class UserRegistrationView(CreateView):
     template_name = 'registration/register.html'
@@ -22,7 +22,7 @@ class UserRegistrationView(CreateView):
         return '/accounts/login/'
 
 class VendorDashboardView(LoginRequiredMixin, TemplateView):
-    template_name = 'vendor_dashboard.html'
+    template_name = 'dashboard/vendor_dashboard.html'
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_vendor():
@@ -30,10 +30,19 @@ class VendorDashboardView(LoginRequiredMixin, TemplateView):
         return super().dispatch(request, *args, **kwargs)
 
 class BuyerDashboardView(LoginRequiredMixin, TemplateView):
-    template_name = 'buyer_dashboard.html'
+    template_name = 'dashboard/buyer_dashboard.html'
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_buyer():
+            return redirect('no_permission')
+        return super().dispatch(request, *args, **kwargs)
+
+
+class UserDashboardView(LoginRequiredMixin, TemplateView):
+    template_name = 'dashboard/user_dashboard.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_user():
             return redirect('no_permission')
         return super().dispatch(request, *args, **kwargs)
 

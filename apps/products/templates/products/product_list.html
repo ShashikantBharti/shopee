@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your Products</h1>
+<a href="{% url 'upload_product' %}" class="btn btn-success">Upload New Product</a>
+<ul>
+  {% for product in products %}
+  <li>{{ product.name }} - ${{ product.price }}</li>
+  {% empty %}
+  <li>No products found.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
